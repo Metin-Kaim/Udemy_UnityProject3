@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UdemyProject3.Abstracts.Controllers;
 using UdemyProject3.Abstracts.Movements;
 using UdemyProject3.Controllers;
 using UnityEngine;
@@ -9,9 +10,9 @@ namespace UdemyProject3.Movements
     public class MoveWithCharacterController : IMover
     {
         CharacterController _characterController;
-        public MoveWithCharacterController(PlayerController playerController)
+        public MoveWithCharacterController(IEntityController entityController)
         {
-            _characterController = playerController.GetComponent<CharacterController>();
+            _characterController = entityController.transform.GetComponent<CharacterController>();
         }
 
         public void MoveAction(Vector3 direction,float moveSpeed)
