@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UdemyProject3.Abstracts.Combats;
 using UdemyProject3.Abstracts.Controllers;
 using UdemyProject3.Abstracts.Movements;
 using UdemyProject3.Animations;
@@ -16,15 +17,19 @@ namespace UdemyProject3.Controllers
         NavMeshAgent _agent;
 
         IMover _mover;
+        IHealth _health;
 
         private void Awake()
         {
+            _health = GetComponent<IHealth>();
             _mover = new MoveWithNavMesh(this);
             _characterAnimation = new CharacterAnimation(this);
             _agent = GetComponent<NavMeshAgent>();
         }
         private void Update()
         {
+            if (_health.IsDead) return;
+
             _mover.MoveAction(_playerPrefab.transform.position, 10f);
         }
 
