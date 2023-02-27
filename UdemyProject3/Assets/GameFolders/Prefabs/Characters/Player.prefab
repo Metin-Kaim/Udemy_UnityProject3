@@ -407,7 +407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6456318021668192757
 Transform:
   m_ObjectHideFlags: 0
@@ -800,6 +800,7 @@ GameObject:
   - component: {fileID: 6456318022707127816}
   - component: {fileID: 6456318022707127817}
   - component: {fileID: 754817256048990407}
+  - component: {fileID: 143576420789440132}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -931,6 +932,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e14fc41f-d062-4f2b-b19b-a79553db93c7
     m_ActionName: OnFoot/Attack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6456318022707127816}
+        m_TargetAssemblyTypeName: UdemyProject3.Inputs.InputReader, Assembly-CSharp
+        m_MethodName: OnInventoryPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3fea1b39-1836-4d36-aac2-d89b7e13d6c8
+    m_ActionName: OnFoot/Inventory[/Keyboard/i]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: OnFoot
@@ -951,7 +968,6 @@ MonoBehaviour:
   _moveSpeed: 5
   _turnSpeed: 10
   _turnTransform: {fileID: 6456318022053507098}
-  _currentWeapon: {fileID: 172911153}
 --- !u!114 &6456318022707127816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -990,6 +1006,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthInfo: {fileID: 11400000, guid: b257f4a8dcf59d7489bf9e7f3a5865a6, type: 2}
+--- !u!114 &143576420789440132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6456318022707127862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef19a3fcb69788942a5b10c3224fb0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weapons: []
 --- !u!1 &6456318022832500955
 GameObject:
   m_ObjectHideFlags: 0

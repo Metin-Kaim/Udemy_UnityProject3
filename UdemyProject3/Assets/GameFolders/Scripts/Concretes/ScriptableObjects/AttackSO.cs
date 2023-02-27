@@ -19,11 +19,13 @@ namespace UdemyProject3.ScriptableObjects
         [SerializeField] float _floatValue = 1f;
         [SerializeField] LayerMask _layerMask;
         [SerializeField] float _attackMaxDelay = .25f;
+        [SerializeField] AnimatorOverrideController _animatorOverrideController;
 
         public int Damage => _damage;
         public float FloatValue => _floatValue;
         public LayerMask LayerMask => _layerMask;
         public float AttackMaxDelay => _attackMaxDelay;
+        public AnimatorOverrideController AnimatorOverride => _animatorOverrideController;
 
         public IAttackType GetAttackType(Transform transform)
         {
