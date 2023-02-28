@@ -42,10 +42,6 @@ namespace UdemyProject3.Controllers
                 _index = 0;
             }
 
-            //CurrentWeapon.gameObject.SetActive(false);
-            //CurrentWeapon = _weapons[_index];
-            //CurrentWeapon.gameObject.SetActive(true);
-
             CurrentWeapon = _weapons[_index];
 
             foreach (var weapon in _weapons)
