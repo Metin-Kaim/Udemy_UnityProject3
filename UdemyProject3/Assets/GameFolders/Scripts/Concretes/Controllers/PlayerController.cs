@@ -10,7 +10,7 @@ using UnityEngine.UIElements;
 
 namespace UdemyProject3.Controllers
 {
-    public class PlayerController : MonoBehaviour,IEntityController
+    public class PlayerController : MonoBehaviour, IEntityController
     {
         [Header("Movement Informations")]
         [SerializeField] float _moveSpeed = 10f;
@@ -19,7 +19,6 @@ namespace UdemyProject3.Controllers
 
 
         IInputReader _input;
-        IMover _mover;
         CharacterAnimation _animation;
         IRotator _xRotator;
         IRotator _yRotator;
@@ -28,11 +27,12 @@ namespace UdemyProject3.Controllers
         Vector3 _direction;
 
         public Transform TurnTransform => _turnTransform;
+        public IMover Mover { get; private set; }
 
         private void Awake()
         {
             _input = GetComponent<IInputReader>();
-            _mover = new MoveWithCharacterController(this);
+            Mover = new MoveWithCharacterController(this);
             _animation = new CharacterAnimation(this);
             _xRotator = new RotatorX(this);
             _yRotator = new RotatorY(this);
@@ -46,20 +46,20 @@ namespace UdemyProject3.Controllers
             _xRotator.RotationAction(_input.Rotation.x, _turnSpeed);
             _yRotator.RotationAction(_input.Rotation.y, _turnSpeed);
 
-            if(_input.IsAttackButtonPress)
+            if (_input.IsAttackButtonPress)
             {
                 _inventory.CurrentWeapon.Attack();
             }
 
-            if(_input.IsInventoryButtonPressed)
+            if (_input.IsInventoryButtonPressed)
             {
                 _inventory.ChangeWeapon();
             }
         }
         private void FixedUpdate()
         {
-            _mover.MoveAction(_direction, _moveSpeed);
-           
+            Mover.MoveAction(_direction, _moveSpeed);
+
         }
 
         private void LateUpdate()
