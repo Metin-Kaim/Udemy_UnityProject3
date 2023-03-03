@@ -8,7 +8,6 @@ namespace UdemyProject3.Abstracts.Controllers
     public interface IEntityController
     {
         Transform transform { get; }
-        IMover Mover { get; }
     }
 }
 

@@ -27,12 +27,13 @@ namespace UdemyProject3.Controllers
         Vector3 _direction;
 
         public Transform TurnTransform => _turnTransform;
-        public IMover Mover { get; private set; }
+        //public IMover Mover { get; private set; }
+        IMover _mover;
 
         private void Awake()
         {
             _input = GetComponent<IInputReader>();
-            Mover = new MoveWithCharacterController(this);
+            _mover = new MoveWithCharacterController(this);
             _animation = new CharacterAnimation(this);
             _xRotator = new RotatorX(this);
             _yRotator = new RotatorY(this);
@@ -58,7 +59,7 @@ namespace UdemyProject3.Controllers
         }
         private void FixedUpdate()
         {
-            Mover.MoveAction(_direction, _moveSpeed);
+            _mover.MoveAction(_direction, _moveSpeed);
 
         }
 

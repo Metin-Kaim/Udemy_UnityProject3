@@ -5,5 +5,7 @@ namespace UdemyProject3.Abstracts.States
         void Tick();
         void OnExit();
         void OnEnter();
+        void TickFixed();
+        void TickLate();
     }
 }
