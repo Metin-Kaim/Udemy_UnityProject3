@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UdemyProject3.Abstracts.Combats;
 using UdemyProject3.Abstracts.Controllers;
 using UdemyProject3.Abstracts.Inputs;
 using UdemyProject3.Abstracts.Movements;
@@ -23,6 +24,7 @@ namespace UdemyProject3.Controllers
         IRotator _xRotator;
         IRotator _yRotator;
         InventoryController _inventory;
+        IHealth _health;
 
         Vector3 _direction;
 
@@ -38,10 +40,22 @@ namespace UdemyProject3.Controllers
             _xRotator = new RotatorX(this);
             _yRotator = new RotatorY(this);
             _inventory = GetComponent<InventoryController>();
+            _health = GetComponent<IHealth>();
+        }
+
+        private void OnEnable()
+        {
+            _health.OnDead += () => _animation.DeadAnimation("death");
+        }
+        private void OnDisable()
+        {
+
         }
 
         private void Update()
         {
+            if (_health.IsDead) return;
+
             _direction = _input.Direction;
 
             _xRotator.RotationAction(_input.Rotation.x, _turnSpeed);
@@ -59,14 +73,19 @@ namespace UdemyProject3.Controllers
         }
         private void FixedUpdate()
         {
+            if (_health.IsDead) return;
+
             _mover.MoveAction(_direction, _moveSpeed);
 
         }
 
         private void LateUpdate()
         {
+            if (_health.IsDead) return;
+
             _animation.MoveAnimation(_direction.magnitude);
             _animation.AttackAnimation(_input.IsAttackButtonPress);
+
         }
 
     }
