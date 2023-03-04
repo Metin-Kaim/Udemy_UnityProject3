@@ -101,10 +101,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6501580702290096927}
-  - component: {fileID: 1639946438}
   - component: {fileID: 5784035170476452237}
   - component: {fileID: 1639946437}
+  - component: {fileID: 1639946438}
   - component: {fileID: 1639946439}
+  - component: {fileID: 1208499625332295415}
   - component: {fileID: 680892268334884204}
   m_Layer: 0
   m_Name: Enemy
@@ -130,19 +131,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1639946438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6501580702290096926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e5a67c5ff546664e8723b73c944aa17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerPrefab: {fileID: 0}
 --- !u!136 &5784035170476452237
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -179,6 +167,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1639946438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6501580702290096926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5a67c5ff546664e8723b73c944aa17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1639946439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +192,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthInfo: {fileID: 11400000, guid: 00bb592274c280f4b97157219a5df5e8, type: 2}
+--- !u!114 &1208499625332295415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6501580702290096926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297afd49f7c8ab448af16f52b0976726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _delayTime: 5
 --- !u!114 &680892268334884204
 MonoBehaviour:
   m_ObjectHideFlags: 0

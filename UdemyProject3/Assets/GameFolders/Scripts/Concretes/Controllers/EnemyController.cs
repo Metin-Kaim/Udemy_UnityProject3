@@ -4,6 +4,7 @@ using UdemyProject3.Abstracts.Combats;
 using UdemyProject3.Abstracts.Controllers;
 using UdemyProject3.Abstracts.Movements;
 using UdemyProject3.Animations;
+using UdemyProject3.Combats;
 using UdemyProject3.Movements;
 using UdemyProject3.States;
 using UdemyProject3.States.EnemyStates;
@@ -30,6 +31,8 @@ namespace UdemyProject3.Controllers
         public Transform Target { get; set; }
         public float Magnitude => _agent.velocity.magnitude;
 
+        public Dead Dead { get; private set; }
+
         IHealth _health;
 
 
@@ -42,6 +45,7 @@ namespace UdemyProject3.Controllers
             Mover = new MoveWithNavMesh(this);
             Animation = new CharacterAnimation(this);
             Inventory = GetComponent<InventoryController>();
+            Dead = GetComponent<Dead>();
         }
 
         private void Start()
@@ -50,7 +54,7 @@ namespace UdemyProject3.Controllers
 
             ChaseState chaseState = new ChaseState(this);
             AttackState attackState = new AttackState(this);
-            DeadState deadState = new DeadState();
+            DeadState deadState = new DeadState(this);
 
             _stateMachine.AddState(chaseState, attackState, () => CanAttack);
             _stateMachine.AddState(attackState, chaseState, () => !CanAttack);

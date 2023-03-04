@@ -1677,10 +1677,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1639946438, guid: 0e6faab2246bdb044987eef54f54221e, type: 3}
-      propertyPath: _playerPrefab
-      value: 
-      objectReference: {fileID: 434826970}
+    - target: {fileID: 3260517352899810618, guid: 0e6faab2246bdb044987eef54f54221e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0000001808614
+      objectReference: {fileID: 0}
+    - target: {fileID: 3260517352899810618, guid: 0e6faab2246bdb044987eef54f54221e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0010206864
+      objectReference: {fileID: 0}
     - target: {fileID: 6501580702290096926, guid: 0e6faab2246bdb044987eef54f54221e, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -1728,6 +1732,14 @@ PrefabInstance:
     - target: {fileID: 6501580702290096927, guid: 0e6faab2246bdb044987eef54f54221e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550735451705935973, guid: 0e6faab2246bdb044987eef54f54221e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0003077264
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550735451705935973, guid: 0e6faab2246bdb044987eef54f54221e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.05645577
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e6faab2246bdb044987eef54f54221e, type: 3}
