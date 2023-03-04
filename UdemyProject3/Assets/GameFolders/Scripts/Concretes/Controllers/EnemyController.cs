@@ -67,7 +67,7 @@ namespace UdemyProject3.Controllers
         private void Update()
         {
             if (_health.IsDead) return;
-
+            if (_health.IsDead) print("oldu");
             _stateMachine.Tick();
         }
 

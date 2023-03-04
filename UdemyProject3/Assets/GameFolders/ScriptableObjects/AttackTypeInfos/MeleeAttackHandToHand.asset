@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MeleeAttackHandToHand
   m_EditorClassIdentifier: 
   _attackType: 1
-  _damage: 1
+  _damage: 50
   _floatValue: 0.5
   _layerMask:
     serializedVersion: 2

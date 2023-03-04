@@ -19,6 +19,7 @@ namespace UdemyProject3.States.EnemyStates
 
         public void OnEnter()
         {
+            Debug.Log("a");
             _enemyController.Dead.DeadAction();
             _enemyController.Animation.DeadAnimation("dying");
             _enemyController.transform.GetComponent<CapsuleCollider>().enabled = false;
