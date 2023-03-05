@@ -29,7 +29,7 @@ namespace UdemyProject3.Combats
 
             _currentHealth -= damage;
 
-            OnTakeHit.Invoke(_currentHealth, _healthInfo.MaxHealth);
+            OnTakeHit?.Invoke(_currentHealth, _healthInfo.MaxHealth);
 
             if (IsDead)
                 OnDead?.Invoke();

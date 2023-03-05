@@ -9,8 +9,8 @@ namespace UdemyProject3.States.EnemyStates
     public class DeadState : IState
     {
         IEnemyController _enemyController;
-        float _maxTime = 5f;
-        float _cuurentTime = 0f;
+        //float _maxTime = 5f;
+        //float _cuurentTime = 0f;
 
         public DeadState(IEnemyController enemyController)
         {
@@ -19,7 +19,6 @@ namespace UdemyProject3.States.EnemyStates
 
         public void OnEnter()
         {
-            Debug.Log("a");
             _enemyController.Dead.DeadAction();
             _enemyController.Animation.DeadAnimation("dying");
             _enemyController.transform.GetComponent<CapsuleCollider>().enabled = false;

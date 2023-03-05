@@ -5,6 +5,7 @@ using UdemyProject3.Abstracts.Controllers;
 using UdemyProject3.Abstracts.Movements;
 using UdemyProject3.Animations;
 using UdemyProject3.Combats;
+using UdemyProject3.Managers;
 using UdemyProject3.Movements;
 using UdemyProject3.States;
 using UdemyProject3.States.EnemyStates;
@@ -35,7 +36,7 @@ namespace UdemyProject3.Controllers
 
         IHealth _health;
 
-
+        bool a;
         private void Awake()
         {
             _health = GetComponent<IHealth>();
@@ -66,8 +67,14 @@ namespace UdemyProject3.Controllers
 
         private void Update()
         {
-            if (_health.IsDead) return;
-            if (_health.IsDead) print("oldu");
+            //if (!a && _health.IsDead)
+            //{
+            //    a = true;
+            //    _stateMachine.Tick();
+            //}
+
+            //if (_health.IsDead) return;
+
             _stateMachine.Tick();
         }
 
@@ -79,6 +86,11 @@ namespace UdemyProject3.Controllers
         private void LateUpdate()
         {
             _stateMachine.TickLate();
+        }
+
+        private void OnDestroy()
+        {
+            EnemyManager.Instance.RemoveEnemyController(this);
         }
     }
 }

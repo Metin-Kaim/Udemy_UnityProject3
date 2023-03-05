@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UdemyProject3.Managers;
 using UdemyProject3.ScriptableObjects;
 using UnityEngine;
 
@@ -22,7 +23,7 @@ namespace UdemyProject3.Controllers
         {
             _currentTime += Time.deltaTime;
 
-            if (_currentTime > _maxTime)
+            if (_currentTime > _maxTime && EnemyManager.Instance.CanSpawn)
             {
                 Spawn();
             }
@@ -30,7 +31,8 @@ namespace UdemyProject3.Controllers
 
         private void Spawn()
         {
-            Instantiate(_spawnInfo.EnemyPrefab, transform.position, Quaternion.identity);
+            EnemyController enemyController = Instantiate(_spawnInfo.EnemyPrefab, transform.position, Quaternion.identity);
+            EnemyManager.Instance.AddEnemyController(enemyController);
 
             _currentTime = 0;
             _maxTime = _spawnInfo.RandomSpawnMaxTime;
