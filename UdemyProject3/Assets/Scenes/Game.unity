@@ -1812,7 +1812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4876861775092082953, guid: 1485a9f2caa3ae2479f20fa083af2996, type: 3}
       propertyPath: _maxCountOnGame
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4876861775092082958, guid: 1485a9f2caa3ae2479f20fa083af2996, type: 3}
       propertyPath: m_Name

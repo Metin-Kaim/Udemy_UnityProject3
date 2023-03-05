@@ -7,7 +7,6 @@ using UdemyProject3.Abstracts.Movements;
 using UdemyProject3.Animations;
 using UdemyProject3.Movements;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace UdemyProject3.Controllers
 {
@@ -41,6 +40,10 @@ namespace UdemyProject3.Controllers
             _yRotator = new RotatorY(this);
             _inventory = GetComponent<InventoryController>();
             _health = GetComponent<IHealth>();
+
+
+            UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+            UnityEngine.Cursor.visible = false;
         }
 
         private void OnEnable()
