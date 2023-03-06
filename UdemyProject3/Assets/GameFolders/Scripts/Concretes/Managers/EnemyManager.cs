@@ -14,6 +14,7 @@ namespace UdemyProject3.Managers
         [SerializeField] List<EnemyController> _enemies;
 
         public bool CanSpawn => _maxCountOnGame > _enemies.Count;
+        public bool IsListEmpty => _enemies.Count <= 0;
 
         private void Awake()
         {

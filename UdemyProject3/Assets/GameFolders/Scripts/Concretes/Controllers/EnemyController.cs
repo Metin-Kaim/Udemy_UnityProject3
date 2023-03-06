@@ -67,14 +67,6 @@ namespace UdemyProject3.Controllers
 
         private void Update()
         {
-            //if (!a && _health.IsDead)
-            //{
-            //    a = true;
-            //    _stateMachine.Tick();
-            //}
-
-            //if (_health.IsDead) return;
-
             _stateMachine.Tick();
         }
 
