@@ -12,8 +12,11 @@ namespace UdemyProject3.Managers
         [SerializeField] float _waitNextLevel = 10f;
         [SerializeField] float _waveMultiple = 1.2f;
         [SerializeField] int _maxWaveBoundaryCount = 50;
+        [SerializeField] int _playerCount = 0;
 
         int _currentWaveMaxCount;
+
+        public int PlayerCount => _playerCount;
         public bool IsWaveFinished => _currentWaveMaxCount <= 0;
 
         public event System.Action<int> OnNextWave;
@@ -60,6 +63,11 @@ namespace UdemyProject3.Managers
             _currentWaveMaxCount = _maxWaveBoundaryCount;
             _waveLevel++;
             OnNextWave?.Invoke(_waveLevel);
+        }
+
+        public void IncreasePlayerCount()
+        {
+            _playerCount++;
         }
 
     }

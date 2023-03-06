@@ -44,3 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b73867db6ebd01249bdaec56bb314908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _waveLevel: 1
+  _waitNextLevel: 10
+  _waveMultiple: 1.2
+  _maxWaveBoundaryCount: 50
+  _playerCount: 0
