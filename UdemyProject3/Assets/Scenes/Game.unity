@@ -1900,16 +1900,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 719504494, guid: b1b3a0cc068785f489337f3aedcc0f73, type: 3}
-      propertyPath: m_Name
-      value: WaveLevelText
-      objectReference: {fileID: 0}
-    - target: {fileID: 719504496, guid: b1b3a0cc068785f489337f3aedcc0f73, type: 3}
-      propertyPath: m_text
-      value: '1
-
-'
-      objectReference: {fileID: 0}
     - target: {fileID: 6456318022707127862, guid: b1b3a0cc068785f489337f3aedcc0f73, type: 3}
       propertyPath: m_Name
       value: Player
