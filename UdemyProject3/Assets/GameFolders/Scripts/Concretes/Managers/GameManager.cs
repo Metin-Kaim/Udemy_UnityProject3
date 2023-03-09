@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UdemyProject3.Abstracts.Helpers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -70,5 +69,18 @@ namespace UdemyProject3.Managers
             _playerCount++;
         }
 
+        public void ReturnMenu()
+        {
+            if (_playerCount > 1)
+            {
+                _playerCount--;
+            }
+            else
+            {
+                _playerCount = 0;
+                EnemyManager.Instance.DestRoyAllEnemies();
+                LoadLevel("Menu");
+            }
+        }
     }
 }

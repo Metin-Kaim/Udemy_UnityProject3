@@ -34,5 +34,15 @@ namespace UdemyProject3.Managers
             _enemies.Remove(enemyController);
             GameManager.Instance.DecreaseWaveCount();
         }
+
+        public void DestRoyAllEnemies()
+        {
+            foreach (var enemy in _enemies)
+            {
+                Destroy(enemy.gameObject);
+            }
+
+            _enemies.Clear();
+        }
     }
 }

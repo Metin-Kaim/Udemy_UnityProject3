@@ -17,6 +17,9 @@ namespace UdemyProject3.Controllers
         [SerializeField] float _turnSpeed = 10f;
         [SerializeField] Transform _turnTransform;
 
+        [Header("UIs")]
+        [SerializeField] GameObject _gameOverPanel;
+
 
         IInputReader _input;
         CharacterAnimation _animation;
@@ -48,13 +51,15 @@ namespace UdemyProject3.Controllers
 
         private void OnEnable()
         {
-            _health.OnDead += () => _animation.DeadAnimation("death");
+            _health.OnDead += () =>
+            {
+                _animation.DeadAnimation("death");
+                _gameOverPanel.SetActive(true);
+                UnityEngine.Cursor.lockState = CursorLockMode.None;
+                UnityEngine.Cursor.visible = true;
+            };
         }
-        private void OnDisable()
-        {
-
-        }
-
+        
         private void Update()
         {
             if (_health.IsDead) return;
