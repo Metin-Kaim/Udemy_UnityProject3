@@ -79,6 +79,7 @@ namespace UdemyProject3.Managers
             {
                 _playerCount = 0;
                 EnemyManager.Instance.DestRoyAllEnemies();
+                EnemyManager.Instance.Targets.Clear();
                 LoadLevel("Menu");
             }
         }

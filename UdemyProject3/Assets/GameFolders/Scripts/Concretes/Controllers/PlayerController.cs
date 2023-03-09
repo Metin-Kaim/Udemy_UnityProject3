@@ -5,6 +5,7 @@ using UdemyProject3.Abstracts.Controllers;
 using UdemyProject3.Abstracts.Inputs;
 using UdemyProject3.Abstracts.Movements;
 using UdemyProject3.Animations;
+using UdemyProject3.Managers;
 using UdemyProject3.Movements;
 using UnityEngine;
 
@@ -58,8 +59,14 @@ namespace UdemyProject3.Controllers
                 UnityEngine.Cursor.lockState = CursorLockMode.None;
                 UnityEngine.Cursor.visible = true;
             };
+
+            EnemyManager.Instance.Targets.Add(transform);
         }
-        
+        private void OnDisable()
+        {
+            EnemyManager.Instance.Targets.Remove(transform);
+        }
+
         private void Update()
         {
             if (_health.IsDead) return;

@@ -51,7 +51,7 @@ namespace UdemyProject3.Controllers
 
         private void Start()
         {
-            Target = FindObjectOfType<PlayerController>().transform;
+            FindNearestTarget();
 
             ChaseState chaseState = new ChaseState(this);
             AttackState attackState = new AttackState(this);
@@ -62,8 +62,8 @@ namespace UdemyProject3.Controllers
             _stateMachine.AddAnyState(deadState, () => _health.IsDead);
 
             _stateMachine.SetState(chaseState);
-            
         }
+
 
         private void Update()
         {
@@ -83,6 +83,22 @@ namespace UdemyProject3.Controllers
         private void OnDestroy()
         {
             EnemyManager.Instance.RemoveEnemyController(this);
+        }
+        public void FindNearestTarget()
+        {
+            Transform nearest = EnemyManager.Instance.Targets[0];
+
+            foreach (Transform target in EnemyManager.Instance.Targets)
+            {
+                float nearestValue = Vector3.Distance(nearest.position, transform.position);
+                float newValue = Vector3.Distance(target.position, transform.position);
+
+                if (newValue < nearestValue)
+                {
+                    nearest = target;
+                }
+            }
+            Target = nearest;
         }
     }
 }

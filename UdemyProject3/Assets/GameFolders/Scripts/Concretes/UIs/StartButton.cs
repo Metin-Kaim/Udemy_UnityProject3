@@ -7,7 +7,7 @@ namespace UdemyProject3.UIs
     {
         protected override void HandleOnButtonClicked()
         {
-            GameManager.Instance.LoadLevel("game");
+            GameManager.Instance.LoadLevel("Game");
 
         }
     }

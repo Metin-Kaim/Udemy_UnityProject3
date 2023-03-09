@@ -16,5 +16,6 @@ namespace UdemyProject3.Abstracts.Controllers
 
         Transform Target{ get; set; }
         float Magnitude { get; }
+        void FindNearestTarget();
     }
 }

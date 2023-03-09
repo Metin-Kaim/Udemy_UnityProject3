@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UdemyProject3.Abstracts.Controllers;
 using UdemyProject3.Abstracts.States;
+using UdemyProject3.Controllers;
 using UnityEngine;
 
 namespace UdemyProject3.States.EnemyStates
@@ -33,6 +34,7 @@ namespace UdemyProject3.States.EnemyStates
 
         public void TickFixed()
         {
+            _enemyController.FindNearestTarget();
         }
 
         public void TickLate()
